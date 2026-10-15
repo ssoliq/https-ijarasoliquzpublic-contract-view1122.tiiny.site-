@@ -1,18 +1,41 @@
+
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hujjat</title>
-
-    <meta http-equiv="refresh" content="0; url="Ijara_shartnoma1122.pdf">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ijara shartnomasi</title>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    #error {
+      padding: 20px;
+    }
+  </style>
 </head>
-
 <body>
-    <p>Hujjat ochilmoqda...</p>
-
-    <script>
-        window.location.href = "Ijara_shartnoma1122.pdf";
-    </script>
+  <iframe
+    id="pdf"
+    src="./Ijara_shartnoma_%204200175%20Copy.pdf">
+  </iframe>
+  <div id="error" hidden>
+    PDF ochilmadi. Fayl nomi va joylashuvini tekshiring.
+    <a href="./Ijara_shartnoma_%204200175%20Copy.pdf">
+      PDF faylni ochish
+    </a>
+  </div>
+  <script>
+    document.getElementById("pdf").addEventListener("error", () => {
+      document.getElementById("error").hidden = false;
+    });
+  </script>
 </body>
 </html>
